@@ -17,6 +17,10 @@
 		EA7ECE6927E44FF00009B0D8 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECE6827E44FF00009B0D8 /* ArticleRowView.swift */; };
 		EA7ECE6C27E464C30009B0D8 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECE6B27E464C30009B0D8 /* ArticleListView.swift */; };
 		EA7ECE6E27E4666E0009B0D8 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECE6D27E4666E0009B0D8 /* SafariView.swift */; };
+		EA7ECE7127E46C460009B0D8 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECE7027E46C460009B0D8 /* NewsApi.swift */; };
+		EA7ECE7327E46D100009B0D8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECE7227E46D100009B0D8 /* Category.swift */; };
+		EA7ECE7627E4A0C00009B0D8 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECE7527E4A0C00009B0D8 /* NewsViewModel.swift */; };
+		EA7ECE7827E4A3010009B0D8 /* NewsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECE7727E4A3010009B0D8 /* NewsTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		EA7ECE6A27E45EB80009B0D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EA7ECE6B27E464C30009B0D8 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		EA7ECE6D27E4666E0009B0D8 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		EA7ECE7027E46C460009B0D8 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
+		EA7ECE7227E46D100009B0D8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EA7ECE7527E4A0C00009B0D8 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		EA7ECE7727E4A3010009B0D8 /* NewsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,8 @@
 		EA7ECE5127E3B0E30009B0D8 /* XCANews */ = {
 			isa = PBXGroup;
 			children = (
+				EA7ECE7427E4A09E0009B0D8 /* ViewModel */,
+				EA7ECE6F27E46C320009B0D8 /* API */,
 				EA7ECE6A27E45EB80009B0D8 /* Info.plist */,
 				EA7ECE6727E44FD30009B0D8 /* Views */,
 				EA7ECE6227E3B5100009B0D8 /* Models */,
@@ -89,6 +99,7 @@
 			children = (
 				EA7ECE6327E3B52C0009B0D8 /* Article.swift */,
 				EA7ECE6527E44C760009B0D8 /* NewsApiResponse.swift */,
+				EA7ECE7227E46D100009B0D8 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,8 +110,25 @@
 				EA7ECE6827E44FF00009B0D8 /* ArticleRowView.swift */,
 				EA7ECE6B27E464C30009B0D8 /* ArticleListView.swift */,
 				EA7ECE6D27E4666E0009B0D8 /* SafariView.swift */,
+				EA7ECE7727E4A3010009B0D8 /* NewsTabView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EA7ECE6F27E46C320009B0D8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EA7ECE7027E46C460009B0D8 /* NewsApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		EA7ECE7427E4A09E0009B0D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EA7ECE7527E4A0C00009B0D8 /* NewsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +207,12 @@
 				EA7ECE6927E44FF00009B0D8 /* ArticleRowView.swift in Sources */,
 				EA7ECE5327E3B0E30009B0D8 /* XCANewsApp.swift in Sources */,
 				EA7ECE6627E44C760009B0D8 /* NewsApiResponse.swift in Sources */,
+				EA7ECE7327E46D100009B0D8 /* Category.swift in Sources */,
 				EA7ECE6427E3B52C0009B0D8 /* Article.swift in Sources */,
+				EA7ECE7827E4A3010009B0D8 /* NewsTabView.swift in Sources */,
+				EA7ECE7627E4A0C00009B0D8 /* NewsViewModel.swift in Sources */,
 				EA7ECE6E27E4666E0009B0D8 /* SafariView.swift in Sources */,
+				EA7ECE7127E46C460009B0D8 /* NewsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
