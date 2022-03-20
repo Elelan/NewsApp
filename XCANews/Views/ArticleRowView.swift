@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ArticleRowView: View {
     
+    @EnvironmentObject var viewModel: BookmarkViewModel
+    
     let article: Article
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -59,9 +61,9 @@ struct ArticleRowView: View {
                     Spacer()
                     
                     Button {
-                        
+                        toggleBookmark(for: article)
                     } label: {
-                        Image(systemName: "bookmark")
+                        Image(systemName: viewModel.isBookmarked(for: article) ? "bookmark.fill" : "bookmark")
                     }
                     .buttonStyle(.bordered)
                     
@@ -77,6 +79,14 @@ struct ArticleRowView: View {
             }.padding([.horizontal, .bottom])
         }
     }
+    
+    private func toggleBookmark(for article: Article) {
+        if viewModel.isBookmarked(for: article) {
+            viewModel.removeBookmark(for: article)
+        } else {
+            viewModel.addBookMark(for: article)
+        }
+    }
 }
 
 extension View {
@@ -90,11 +100,15 @@ extension View {
 }
 
 struct ArticleRowView_Previews: PreviewProvider {
+    
+    @StateObject static var viewModel = BookmarkViewModel.shared
+
     static var previews: some View {
         List {
             ArticleRowView(article: .previewData[1])
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
         .listStyle(.plain)
+        .environmentObject(viewModel)
     }
 }

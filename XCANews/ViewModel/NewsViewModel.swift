@@ -13,11 +13,16 @@ enum DataFetchPase<T> {
     case failure(Error)
 }
 
+struct FetchTaskToken: Equatable {
+    var category: Category
+    var token: Date
+}
+
 @MainActor
 class NewsViewModel: ObservableObject {
     
     @Published var phase = DataFetchPase<[Article]>.empty
-    @Published var selectedCategory: Category
+    @Published var fetchTaskToken: FetchTaskToken
     private let newsApi = NewsApi.shared
     
     init(articles: [Article]? = nil, selectedCategory: Category = .general) {
@@ -26,17 +31,18 @@ class NewsViewModel: ObservableObject {
         } else {
             self.phase = .empty
         }
-        self.selectedCategory = selectedCategory
+        self.fetchTaskToken = FetchTaskToken(category: selectedCategory, token: Date())
     }
     
     func loadArticles() async {
-        phase = .empty
-        do {
-            let articles = Article.previewData//try await newsApi.fetch(from: selectedCategory)
-            phase = .success(articles)
-        } catch {
-            print(error.localizedDescription)
-            phase = .failure(error)
-        }
+        phase = .success(Article.previewData)
+//        phase = .empty
+//        do {
+//            let articles = try await newsApi.fetch(from: fetchTaskToken.category)
+//            phase = .success(articles)
+//        } catch {
+//            print(error.localizedDescription)
+//            phase = .failure(error)
+//        }
     }
 }
